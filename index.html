@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Comeback Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎓 Academic Comeback Predictor</h1>
+
+        <p class="subtitle">
+            Let our extremely advanced technology analyze your academic aura.
+        </p>
+
+        <div class="camera-container">
+
+            <video id="camera" autoplay playsinline></video>
+
+            <div class="face-frame"></div>
+
+            <div id="scanLine" class="scan-line"></div>
+
+        </div>
+
+        <p id="status">
+            Position your face in the frame.
+        </p>
+
+        <button id="predictButton">
+            ANALYZE MY COMEBACK
+        </button>
+
+        <div id="result" class="result hidden">
+
+            <h2>Your Academic Comeback</h2>
+
+            <div id="score" class="score">
+                0%
+            </div>
+
+            <p id="message"></p>
+
+            <button id="againButton">
+                Scan Again
+            </button>
+
+        </div>
+
+        <p class="disclaimer">
+            For entertainment only — your face is not actually analyzed.
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
