@@ -53,37 +53,74 @@ const messages = [
     {
         min: 0,
         max: 20,
-        text: "It's looking rough 💀 You might want to open the textbook."
+        texts: [
+            "It's looking rough 💀 You might want to open the textbook.",
+            "My academic downfall was just part of the lore.",
+            "My GPA has suffered enough under my leadership.",
+            "I'm bringing my grades back from the dead.",
+            "My comeback starts right after this one TikTok."
+        ]
     },
 
     {
         min: 21,
         max: 40,
-        text: "Potential detected... motivation not detected."
+        texts: [
+            "Potential detected... motivation not detected.",
+            "Academic comeback sponsored by caffeine and panic.",
+            "My calculator and I are back on speaking terms.",
+            "Can't talk, I'm pretending to have my life together.",
+            "I have two options: lock in or become mysteriously wealthy."
+        ]
     },
 
     {
         min: 41,
         max: 60,
-        text: "A comeback is possible. The academic weapon is still loading."
+        texts: [
+            "A comeback is possible. The academic weapon is still loading.",
+            "My grades are about to receive an unexpected software update.",
+            "They said lock in, so I changed my screen time password.",
+            "Straight A's or a very convincing explanation.",
+            "New semester. New habits. New opportunities."
+        ]
     },
 
     {
         min: 61,
         max: 80,
-        text: "Wait... you're actually starting to lock in 🔥"
+        texts: [
+            "Wait... you're actually starting to lock in 🔥",
+            "From academic victim to academic weapon.",
+            "Going from 'what assignment?' to 'already submitted.'",
+            "One good grade and suddenly I think I'm Einstein.",
+            "The syllabus said 'good luck' like I'm gonna need it."
+        ]
     },
 
     {
         min: 81,
         max: 94,
-        text: "Academic weapon detected. Professors are getting nervous."
+        texts: [
+            "Academic weapon detected. Professors are getting nervous.",
+            "The comeback will be studied in future textbooks.",
+            "I'm either making the Dean's List or making memories.",
+            "From academic victim to academic weapon. 🧠🔥",
+            "Going from 'what assignment?' to 'already submitted.'"
+        ]
     },
 
     {
         min: 95,
         max: 100,
-        text: "ABSOLUTE ACADEMIC COMEBACK. 4.0 ENERGY DETECTED. 🧠🔥"
+        texts: [
+            "ABSOLUTE ACADEMIC COMEBACK. 4.0 ENERGY DETECTED. 🧠🔥",
+            "Academic weapon detected. Professors are getting nervous.",
+            "The comeback will be studied in future textbooks. 📚🔥",
+            "From academic victim to academic weapon. ⚔️📚",
+            "I'm either making the Dean's List or making memories. 🏆",
+            "One good grade and suddenly I think I'm Einstein. 🧠"
+        ]
     }
 
 ];
@@ -91,11 +128,14 @@ const messages = [
 
 function getMessage(score) {
 
-    const result = messages.find(item =>
+    const category = messages.find(item =>
         score >= item.min && score <= item.max
     );
 
-    return result.text;
+    const randomIndex =
+        Math.floor(Math.random() * category.texts.length);
+
+    return category.texts[randomIndex];
 }
 
 
@@ -154,8 +194,10 @@ predictButton.addEventListener("click", () => {
 
         /* Completely random score */
 
-        const score =
-            Math.floor(Math.random() * 101);
+/* Random score between 60 and 100 */
+
+const score =
+    Math.floor(Math.random() * 41) + 60;
 
 
         scoreText.textContent =
